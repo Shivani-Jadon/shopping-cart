@@ -1,6 +1,7 @@
-.App {
+.App h1{
   text-align: center;
   color: crimson;
   background-color: lightblue;
+  padding : 2%;
 }
 
