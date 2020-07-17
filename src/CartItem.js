@@ -13,6 +13,11 @@ class CartItem extends React.Component {
             price : 20000,
             qtn : 1
         }
+
+        this.increaseQtn = () => {
+            console.log('this.states : ', this.states);
+            ++this.states.qtn;
+        }
     }
 
     render(){
@@ -30,9 +35,10 @@ class CartItem extends React.Component {
 
                     <div className="cart-item-actions">
                         {/* {buttons} */}
-                        <img alt="increase" style={styles.btn} src="https://image.flaticon.com/icons/svg/929/929409.svg"/>
-                        <img alt="decrease" style={styles.btn} src="https://image.flaticon.com/icons/svg/957/957316.svg"/>
-                        <img alt="delete" style={styles.btn} src="https://image.flaticon.com/icons/svg/3143/3143497.svg"/>
+                        <img className="action-icons" alt="increase" src="https://image.flaticon.com/icons/svg/929/929409.svg"
+                            onClick={this.increaseQtn}/>
+                        <img className="action-icons" alt="decrease" src="https://image.flaticon.com/icons/svg/957/957316.svg"/>
+                        <img className="action-icons" alt="delete" src="https://image.flaticon.com/icons/svg/3143/3143497.svg"/>
                     </div>
                 </div>
             </div>
