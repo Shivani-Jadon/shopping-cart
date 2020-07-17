@@ -3,25 +3,62 @@ import React from "react";
 
 class CartItem extends React.Component {
 
-    // add states using constructor
+    // add state using constructor
     constructor(){
         // deriving constructor of the super class
         super();
-        // ḍefining states as object
-        this.states = {
+        // ḍefining state as object
+        this.state = {
             item_name : 'Washing Machine',
             price : 20000,
             qtn : 1
         }
-
+    
         this.increaseQtn = () => {
-            console.log('this.states : ', this.states);
-            ++this.states.qtn;
-        }
+            console.log('this.state before : ', this.state);
+            // ++this.state.qtn;
+
+            // modify state change so that it renders on the page - setState()
+            // method 1 :
+                // this.setState({
+                //     qtn : this.state.qtn++
+                // });
+
+            // method 2 - when the state depends on the previous state
+            this.setState((prevState) => {
+                return {
+                    qtn : prevState.qtn + 1
+                }
+            })
+        };     
+
+        this.decreaseQtn = () => {
+            console.log('this.state before : ', this.state);
+            
+            this.setState((prevState) => {
+                if(prevState.qtn===0){
+                    return {
+                        qtn : prevState.qtn
+                    }
+                }else{
+                    return {
+                        qtn : prevState.qtn - 1
+                    }
+                }                
+            });
+        };     
     }
 
+    // to not loss the scope of this we can use bind()
+    // increaseQtn(){
+    //     console.log('this.state : ', this.state);
+    // }
+
+    // passing increaseQtn method
+    // this.increaseQtn.bind(this)
+
     render(){
-        const {price, qtn} = this.states;
+        const {price, qtn} = this.state;
 
         return (
             <div className="cart-item">
@@ -29,7 +66,7 @@ class CartItem extends React.Component {
                     <img src="https://image.flaticon.com/icons/svg/2919/2919760.svg" style={styles.image} alt="Item"/>
                 </div>
                 <div className="right-block">
-                    <div style={styles.itemName}>{this.states.item_name}</div>
+                    <div style={styles.itemName}>{this.state.item_name}</div>
                     <div style={{color:'dimgrey' ,fontWeight : 'bold'}}>Rs. {price}</div>
                     <div style={{color:'dimgrey'}}> Qtn : {qtn}</div>
 
@@ -37,7 +74,8 @@ class CartItem extends React.Component {
                         {/* {buttons} */}
                         <img className="action-icons" alt="increase" src="https://image.flaticon.com/icons/svg/929/929409.svg"
                             onClick={this.increaseQtn}/>
-                        <img className="action-icons" alt="decrease" src="https://image.flaticon.com/icons/svg/957/957316.svg"/>
+                        <img className="action-icons" alt="decrease" src="https://image.flaticon.com/icons/svg/957/957316.svg"
+                            onClick={this.decreaseQtn}/>
                         <img className="action-icons" alt="delete" src="https://image.flaticon.com/icons/svg/3143/3143497.svg"/>
                     </div>
                 </div>
