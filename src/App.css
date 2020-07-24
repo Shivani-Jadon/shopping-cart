@@ -3,5 +3,8 @@
   color: crimson;
   background-color: lightblue;
   padding : 2%;
+  margin-top: 0;
+  text-shadow: 0px 2px 2px;
+  font-style: italic;
 }
 

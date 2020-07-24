@@ -7,6 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* styling cart items and blocks*/
 .cart-item {
   display: inline-flex;
   margin: 20px 10px;
@@ -24,4 +25,11 @@ body {
 }
 .action-icons:hover {
   cursor: pointer;
+}
+
+/* styling cart wrapper */
+.cart-wrapper{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }

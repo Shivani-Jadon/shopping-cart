@@ -1,6 +1,5 @@
 import React from "react";
 
-
 class CartItem extends React.Component {
 
     // add state using constructor
