@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Cart from './Cart';
 import Navbar from './Navbar';
+import Footer from './Footer'
 
 
 class App extends React.Component {
@@ -110,6 +111,16 @@ class App extends React.Component {
 		})
 		return total_items;
 	}
+
+	// function to get total cost of items in cart
+	cart_total = () => {
+		const {products} = this.state;		
+		let total_price = 0;
+		products.forEach((product) => {
+			total_price += product.price*product.qtn;
+		})
+		return total_price;
+	}
 	
 	render(){
 
@@ -118,13 +129,16 @@ class App extends React.Component {
 		return (
 		<div className="App">
 			<header>
-			<h1><img style={{width:40, marginBottom:-10}} src="https://image.flaticon.com/icons/svg/1170/1170576.svg" alt="Cart"/>  My Shopping Cart</h1>
-			<Navbar count_of_items={this.items_count()}/>
+				<h1><img style={{width:40, marginBottom:-10}} src="https://image.flaticon.com/icons/svg/1170/1170576.svg" alt="Cart"/>  My Shopping Cart</h1>
+				<Navbar count_of_items={this.items_count()}/>
 			</header>      
 			<Cart 	products={products}
 					onIncreaseQty={this.handleIncreaseQty}
 					onDecreaseQty={this.handleDecreaseQty}
 					onRemoveItem={this.handleRemoveItem}/>
+			<footer>
+				<Footer cost={this.cart_total()}/>
+			</footer>			
 		</div>
 		);
 	}
