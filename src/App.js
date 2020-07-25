@@ -99,14 +99,27 @@ class App extends React.Component {
 	//     })
 	// }
 
+
+	// function to get total items in cart
+	items_count = () => {
+
+		const {products} = this.state;		
+		let total_items = 0;
+		products.forEach((product) => {
+			total_items += product.qtn;
+		})
+		return total_items;
+	}
+	
 	render(){
+
 		const {products} = this.state;
 
 		return (
 		<div className="App">
 			<header>
 			<h1><img style={{width:40, marginBottom:-10}} src="https://image.flaticon.com/icons/svg/1170/1170576.svg" alt="Cart"/>  My Shopping Cart</h1>
-			<Navbar />
+			<Navbar count_of_items={this.items_count()}/>
 			</header>      
 			<Cart 	products={products}
 					onIncreaseQty={this.handleIncreaseQty}
