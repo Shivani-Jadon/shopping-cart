@@ -10,14 +10,21 @@ body {
 /* styling cart items and blocks*/
 .cart-item {
   display: inline-flex;
-  margin: 20px 50px;
+  margin: 20px 2%;
   min-width: 42%;
 }
+
+@media screen and (max-width : 500px){
+  .cart-item {
+    display: inline-block;
+  } 
+
+}
 .cart-item .right-block {
-  padding: 0 20px;
+  padding: 0 2vw;
 }
 .cart-item-actions {
-  margin-top: 20px;
+  margin-top: 4%;
 }
 .action-icons {
   height: 25px;

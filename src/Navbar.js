@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Navbar = (props) => {
-
-        return (
-            <div style={styles.cart_detail}>
-                <img style={styles.cartImage} src="https://image.flaticon.com/icons/svg/3208/3208738.svg"></img>
-                <span style={styles.cartCount}>5</span>
-            </div>
-        );   
+const Navbar = (props) => {   
+        
+    return (
+        <div style={styles.cart_detail}>
+            <img style={styles.cartImage} src="https://image.flaticon.com/icons/svg/3208/3208738.svg" alt="shop"></img>
+        <span style={styles.cartCount}> </span>
+        </div>
+    );   
 }
 
 const styles = {

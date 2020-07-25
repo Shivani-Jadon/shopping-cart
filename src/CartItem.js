@@ -1,6 +1,6 @@
 import React from "react";
 
-class CartItem extends React.Component {
+const CartItem = (props) => {
 
     // add state using constructor
     // constructor(){
@@ -55,34 +55,32 @@ class CartItem extends React.Component {
     // passing increaseQtn method
     // this.increaseQtn.bind(this)
 
-    render(){
-        console.log("this.props ", this.props);
-        const {item_name, price, qtn} = this.props.product;
-        const {id} = this.props.product;
+    
+    const {item_name, price, qtn} = props.product;
 
-        return (
-            <div className="cart-item">
-                <div className="left-block">
-                    <img src={this.props.product.image} style={styles.image} alt="Item"/>
-                </div>
-                <div className="right-block">
-                    <div style={styles.itemName}>{item_name}</div>
-                    <div style={{color:'dimgrey' ,fontWeight : 'bold'}}>Rs. {price}</div>
-                    <div style={{color:'dimgrey'}}> Qtn : {qtn}</div>
+    return (
+        <div className="cart-item">
+            <div className="left-block">
+                <img src={props.product.image} style={styles.image} alt="Item"/>
+            </div>
+            <div className="right-block">
+                <div style={styles.itemName}>{item_name}</div>
+                <div style={{color:'dimgrey' ,fontWeight : 'bold'}}>Rs. {price}</div>
+                <div style={{color:'dimgrey'}}> Qtn : {qtn}</div>
 
-                    <div className="cart-item-actions">
-                        {/* {buttons} */}
-                        <img className="action-icons" alt="increase" src="https://image.flaticon.com/icons/svg/929/929409.svg"
-                            onClick={() => this.props.onIncreaseQty(this.props.product)}/>
-                        <img className="action-icons" alt="decrease" src="https://image.flaticon.com/icons/svg/957/957316.svg"
-                            onClick={() => this.props.onDecreaseQty(this.props.product)}/>
-                        <img className="action-icons" alt="delete" src="https://image.flaticon.com/icons/svg/3143/3143497.svg"
-                            onClick={() => this.props.onRemoveItem(this.props.product)}/>
-                    </div>
+                <div className="cart-item-actions">
+                    {/* {buttons} */}
+                    <img className="action-icons" alt="increase" src="https://image.flaticon.com/icons/svg/929/929409.svg"
+                        onClick={() => props.onIncreaseQty(props.product)}/>
+                    <img className="action-icons" alt="decrease" src="https://image.flaticon.com/icons/svg/957/957316.svg"
+                        onClick={() => props.onDecreaseQty(props.product)}/>
+                    <img className="action-icons" alt="delete" src="https://image.flaticon.com/icons/svg/3143/3143497.svg"
+                        onClick={() => props.onRemoveItem(props.product)}/>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
+    
 }
 
 // style object
