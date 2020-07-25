@@ -22,9 +22,10 @@ const Cart = (props) => {
 // styling object
 const styling = {
     wrapper : {
-        background : 'azure',
-        boxShadow : 'inset 1px -5px 11px 0px black',
-        padding : '10px 30px'
+        // minHeight : '68vh',
+        // background : 'azure',
+        // boxShadow : 'inset 1px -5px 11px 0px black',
+        // padding : '10px 30px'
     }
 }
 

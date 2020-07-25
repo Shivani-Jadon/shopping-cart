@@ -7,6 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* styling cart wrapper */
+.cart-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 /* styling cart items and blocks*/
 .cart-item {
   display: inline-flex;
@@ -35,8 +41,3 @@ body {
   cursor: pointer;
 }
 
-/* styling cart wrapper */
-.cart-wrapper{
-  display: flex;
-  flex-wrap: wrap;
-}

@@ -13,7 +13,8 @@ const Navbar = (props) => {
 const styles = {
     cart_detail : {
         display : 'flex',
-        marginTop : 20
+        marginTop : 30,
+        maxHeight : 50
     },
     cartImage : {
         width : 40

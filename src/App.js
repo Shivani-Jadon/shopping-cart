@@ -125,17 +125,27 @@ class App extends React.Component {
 	render(){
 
 		const {products} = this.state;
+		console.log("no of products : ", products.length);
 
 		return (
 		<div className="App">
 			<header>
 				<h1><img style={{width:40, marginBottom:-10}} src="https://image.flaticon.com/icons/svg/1170/1170576.svg" alt="Cart"/>  My Shopping Cart</h1>
 				<Navbar count_of_items={this.items_count()}/>
-			</header>      
-			<Cart 	products={products}
+			</header>   
+			<main>
+				{products.length!==0 && <Cart 	products={products}
 					onIncreaseQty={this.handleIncreaseQty}
 					onDecreaseQty={this.handleDecreaseQty}
-					onRemoveItem={this.handleRemoveItem}/>
+					onRemoveItem={this.handleRemoveItem}
+					cart_empty={this.empty_Cart}/>}
+				{products.length===0 && <div>
+						<h1 style={{color: 'gray', textAlign: 'center'}}>OOPs!!! Your Cart is empty</h1>
+						<img style={styling.empty} src="https://image.flaticon.com/icons/svg/1283/1283243.svg"></img>
+					</div>}
+			</main>   
+			
+			
 			<footer>
 				<Footer cost={this.cart_total()}/>
 			</footer>			
@@ -143,6 +153,14 @@ class App extends React.Component {
 		);
 	}
   
+}
+
+const styling = {
+	empty : {
+		height: '40vh',
+		margin: 'auto',
+		display: 'flex'
+	}
 }
 
 export default App;
