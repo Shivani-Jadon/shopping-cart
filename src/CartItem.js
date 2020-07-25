@@ -7,11 +7,11 @@ class CartItem extends React.Component {
         // deriving constructor of the super class
         super();
         // ḍefining state as object
-        this.state = {
-            item_name : 'Washing Machine',
-            price : 20000,
-            qtn : 1
-        }
+        // this.state = {
+        //     item_name : 'Washing Machine',
+        //     price : 20000,
+        //     qtn : 1
+        // }
     
         this.increaseQtn = () => {
             console.log('this.state before : ', this.state);
@@ -57,15 +57,16 @@ class CartItem extends React.Component {
     // this.increaseQtn.bind(this)
 
     render(){
-        const {price, qtn} = this.state;
+        console.log("this.props ", this.props);
+        const {item_name, price, qtn} = this.props.product;
 
         return (
             <div className="cart-item">
                 <div className="left-block">
-                    <img src="https://image.flaticon.com/icons/svg/2919/2919760.svg" style={styles.image} alt="Item"/>
+                    <img src={this.props.product.image} style={styles.image} alt="Item"/>
                 </div>
                 <div className="right-block">
-                    <div style={styles.itemName}>{this.state.item_name}</div>
+                    <div style={styles.itemName}>{item_name}</div>
                     <div style={{color:'dimgrey' ,fontWeight : 'bold'}}>Rs. {price}</div>
                     <div style={{color:'dimgrey'}}> Qtn : {qtn}</div>
 
@@ -91,9 +92,10 @@ const styles = {
         color : 'dimgrey',
         fontSize : 100,
         fontWeight : 'bold',
-        background : 'lightgrey',
+        background : 'white',
         borderRadius : 10,
-        border : '1px dimgrey solid'
+        border : '4px dimgrey solid',
+        padding : 20
     },
     itemName : {
         fontSize : 30,
