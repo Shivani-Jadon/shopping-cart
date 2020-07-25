@@ -5,6 +5,8 @@ import App from './App';
 
 
 ReactDOM.render(
+  // StrictMode is a tool for highlighting potential problems in an application.
+  // It fails to automatically detect render side effects so it will render React components twice
   <React.StrictMode>
     <App />
   </React.StrictMode>,

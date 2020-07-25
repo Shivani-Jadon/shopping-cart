@@ -3,9 +3,9 @@ import React from "react";
 class CartItem extends React.Component {
 
     // add state using constructor
-    constructor(){
-        // deriving constructor of the super class
-        super();
+    // constructor(){
+    //     // deriving constructor of the super class
+    //     super();
         // ḍefining state as object
         // this.state = {
         //     item_name : 'Washing Machine',
@@ -13,40 +13,40 @@ class CartItem extends React.Component {
         //     qtn : 1
         // }
     
-        this.increaseQtn = () => {
-            console.log('this.state before : ', this.state);
-            // ++this.state.qtn;
+    //     this.increaseQtn = () => {
+    //         console.log('this.state before : ', this.state);
+    //         // ++this.state.qtn;
 
-            // modify state change so that it renders on the page - setState()
-            // method 1 :
-                // this.setState({
-                //     qtn : this.state.qtn++
-                // });
+    //         // modify state change so that it renders on the page - setState()
+    //         // method 1 :
+    //             // this.setState({
+    //             //     qtn : this.state.qtn++
+    //             // });
 
-            // method 2 - when the state depends on the previous state
-            this.setState((prevState) => {
-                return {
-                    qtn : prevState.qtn + 1
-                }
-            })
-        };     
+    //         // method 2 - when the state depends on the previous state
+    //         this.setState((prevState) => {
+    //             return {
+    //                 qtn : prevState.qtn + 1
+    //             }
+    //         })
+    //     };     
 
-        this.decreaseQtn = () => {
-            console.log('this.state before : ', this.state);
+    //     this.decreaseQtn = () => {
+    //         console.log('this.state before : ', this.state);
             
-            this.setState((prevState) => {
-                if(prevState.qtn===0){
-                    return {
-                        qtn : prevState.qtn
-                    }
-                }else{
-                    return {
-                        qtn : prevState.qtn - 1
-                    }
-                }                
-            });
-        };     
-    }
+    //         this.setState((prevState) => {
+    //             if(prevState.qtn===0){
+    //                 return {
+    //                     qtn : prevState.qtn
+    //                 }
+    //             }else{
+    //                 return {
+    //                     qtn : prevState.qtn - 1
+    //                 }
+    //             }                
+    //         });
+    //     };     
+    // }
 
     // to not loss the scope of this we can use bind()
     // increaseQtn(){
@@ -73,9 +73,9 @@ class CartItem extends React.Component {
                     <div className="cart-item-actions">
                         {/* {buttons} */}
                         <img className="action-icons" alt="increase" src="https://image.flaticon.com/icons/svg/929/929409.svg"
-                            onClick={this.increaseQtn}/>
+                            onClick={() => this.props.onIncreaseQty(this.props.product)}/>
                         <img className="action-icons" alt="decrease" src="https://image.flaticon.com/icons/svg/957/957316.svg"
-                            onClick={this.decreaseQtn}/>
+                            onClick={() => this.props.onDecreaseQty(this.props.product)}/>
                         <img className="action-icons" alt="delete" src="https://image.flaticon.com/icons/svg/3143/3143497.svg"/>
                     </div>
                 </div>

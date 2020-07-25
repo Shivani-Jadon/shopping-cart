@@ -10,8 +10,8 @@ body {
 /* styling cart items and blocks*/
 .cart-item {
   display: inline-flex;
-  margin: 20px 10px;
-  min-width: 40%;
+  margin: 20px 50px;
+  min-width: 42%;
 }
 .cart-item .right-block {
   padding: 0 20px;
