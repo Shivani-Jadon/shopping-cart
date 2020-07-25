@@ -52,13 +52,13 @@ class CartItem extends React.Component {
     // increaseQtn(){
     //     console.log('this.state : ', this.state);
     // }
-
     // passing increaseQtn method
     // this.increaseQtn.bind(this)
 
     render(){
         console.log("this.props ", this.props);
         const {item_name, price, qtn} = this.props.product;
+        const {id} = this.props.product;
 
         return (
             <div className="cart-item">
@@ -76,7 +76,8 @@ class CartItem extends React.Component {
                             onClick={() => this.props.onIncreaseQty(this.props.product)}/>
                         <img className="action-icons" alt="decrease" src="https://image.flaticon.com/icons/svg/957/957316.svg"
                             onClick={() => this.props.onDecreaseQty(this.props.product)}/>
-                        <img className="action-icons" alt="delete" src="https://image.flaticon.com/icons/svg/3143/3143497.svg"/>
+                        <img className="action-icons" alt="delete" src="https://image.flaticon.com/icons/svg/3143/3143497.svg"
+                            onClick={() => this.props.onRemoveItem(this.props.product)}/>
                     </div>
                 </div>
             </div>

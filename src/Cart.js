@@ -48,7 +48,7 @@ class Cart extends React.Component{
         }
     }
 
-    // function for handeling increase qtn event on click from parent
+    // function for handling increase qtn event on click from parent
     handleIncreaseQty = (product) => {
         const {products} = this.state;
         // console.log("Increasing quantity");
@@ -61,7 +61,7 @@ class Cart extends React.Component{
         })
     }
     
-    // function for handeling decrease qtn event on click from parent
+    // function for handling decrease qtn event on click from parent
     handleDecreaseQty = (product) => {
         const {products} = this.state;
         // console.log("Increasing quantity");
@@ -72,10 +72,32 @@ class Cart extends React.Component{
             this.setState({
                 products : products
             })
-        }
-        
+        }       
     }
 
+    // function to handle delete item event
+    handleRemoveItem = (product) => {
+        // console.log("id of removed item ",);
+        const {products} = this.state;
+        const index = products.indexOf(product);
+        // remove the object using splice method or filter method
+        products.splice(index,1);
+        this.setState({
+            products : products
+        })
+    }
+
+    // function to handle delete item event with filter method
+    // handleRemoveItem = (id) => {
+    //     const {products} = this.state;
+    //     // creating a filtered array without that element
+    //     const {items} = products.filter((item) => item.id != id)
+    //      this.setState({
+    //         products : items
+    //     })
+    // }
+
+    
     render(){
         // console.log("In Cart component ");
         const {products} = this.state;
@@ -86,7 +108,8 @@ class Cart extends React.Component{
                     return <CartItem product={product} 
                             key={product.id} 
                             onIncreaseQty={this.handleIncreaseQty}
-                            onDecreaseQty={this.handleDecreaseQty}/>
+                            onDecreaseQty={this.handleDecreaseQty}
+                            onRemoveItem={this.handleRemoveItem}/>
                 })
                 }                
             </div>
