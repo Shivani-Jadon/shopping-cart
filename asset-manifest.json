@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Shivani-Jadon/Indecision-app/static/css/main.7f28d7aa.chunk.css",
+    "main.js": "/Shivani-Jadon/Indecision-app/static/js/main.caafb046.chunk.js",
+    "main.js.map": "/Shivani-Jadon/Indecision-app/static/js/main.caafb046.chunk.js.map",
+    "runtime-main.js": "/Shivani-Jadon/Indecision-app/static/js/runtime-main.b228a5ca.js",
+    "runtime-main.js.map": "/Shivani-Jadon/Indecision-app/static/js/runtime-main.b228a5ca.js.map",
+    "static/js/2.c43617e0.chunk.js": "/Shivani-Jadon/Indecision-app/static/js/2.c43617e0.chunk.js",
+    "static/js/2.c43617e0.chunk.js.map": "/Shivani-Jadon/Indecision-app/static/js/2.c43617e0.chunk.js.map",
+    "index.html": "/Shivani-Jadon/Indecision-app/index.html",
+    "precache-manifest.7ea267aacd63c784e7515f3de6a23164.js": "/Shivani-Jadon/Indecision-app/precache-manifest.7ea267aacd63c784e7515f3de6a23164.js",
+    "service-worker.js": "/Shivani-Jadon/Indecision-app/service-worker.js",
+    "static/css/main.7f28d7aa.chunk.css.map": "/Shivani-Jadon/Indecision-app/static/css/main.7f28d7aa.chunk.css.map",
+    "static/js/2.c43617e0.chunk.js.LICENSE.txt": "/Shivani-Jadon/Indecision-app/static/js/2.c43617e0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b228a5ca.js",
+    "static/js/2.c43617e0.chunk.js",
+    "static/css/main.7f28d7aa.chunk.css",
+    "static/js/main.caafb046.chunk.js"
+  ]
+}
