@@ -5,7 +5,7 @@ const Cart = (props) => {
 
     const {products} = props;
     return (
-        <div className="cart-wrapper"  style={styling.wrapper}>
+        <div className="cart-wrapper">
             {products.map((product) => {
                 // console.log(product);
                 return <CartItem product={product} 
@@ -19,14 +19,5 @@ const Cart = (props) => {
     );
 }
 
-// styling object
-const styling = {
-    wrapper : {
-        // minHeight : '68vh',
-        // background : 'azure',
-        // boxShadow : 'inset 1px -5px 11px 0px black',
-        // padding : '10px 30px'
-    }
-}
 
 export default Cart;
